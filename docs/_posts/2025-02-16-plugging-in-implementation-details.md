@@ -6,7 +6,7 @@ categories: CATEGORY-1 CATEGORY-2
 ---
 # Plugging in implementation details
 
-**Software is easier to change when we can plugin implementation into our business rules.**
+**Software is easier to change when we can plug implementation into our business rules.**
 
 [comment]: # TODO: change this image to match business rules/logic
 ![Image of implementation details being plugged into business rules]({{ site.baseurl }}/assets/images/2025-02-16-plugging-in-implementation-details/business-logic-implementation.jpg)
@@ -90,7 +90,7 @@ describe('SubmitOrderButton', () => {
 });
 ```
 
-To change this to use Snowplow, you’d have to change the component and the test to call Snowplow correctly. Of course, there are 100 different components in the web app that use `window.gtag`, so you have 100 components and 100 tests to change. Great.
+To change this to use Snowplow, you’d have to change the component and the test to call Snowplow correctly. Of course, there are 100 different components in the web app that use `window.gtag`, so you have 100 components and 100 tests to change. *Great*.
 
 Your life would be a lot easier if the `window.gtag` details were hidden inside a `sendGaEvent` function, e.g.
 ```javascript
