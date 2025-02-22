@@ -55,6 +55,7 @@ export const SubmitOrderButton: React.FC<{ order: Order }> = ({ order }) => {
 ```
 
 The test for this might look something like this:
+<div>
 ```javascript
 describe('SubmitOrderButton', () => {
     let sendOrderToBackend: MockInstance;
@@ -89,6 +90,7 @@ describe('SubmitOrderButton', () => {
     });
 });
 ```
+</div>
 
 To change this to use Snowplow, you’d have to change the component and the test to call Snowplow correctly. Of course, there are 100 different components in the web app that use `window.gtag`, so you have 100 components and 100 tests to change. *Great*.
 
