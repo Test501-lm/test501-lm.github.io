@@ -38,13 +38,11 @@ import { useCallback } from "react";
 import { sendOrderToBackend } from '@/services/backend';
 import { Order } from "@/models/order";
 
-
 export const SubmitOrderButton: React.FC<{ order: Order }> = ({ order }) => {
     const submitOrder = useCallback(async () => {
         await sendOrderToBackend(order);
         window.gtag('event', 'order_submitted', order);
     }, [order]);
-
 
     return (
         <button
@@ -62,27 +60,22 @@ describe('SubmitOrderButton', () => {
     let sendOrderToBackend: MockInstance;
     let gtag: MockInstance;
 
-
     beforeEach(() => {
         gtag = vi.fn();
         vi.stubGlobal('gtag', gtag);
         sendOrderToBackend = vi.spyOn(backend, 'sendOrderToBackend');
     });
 
-
     afterEach(() => {
         sendOrderToBackend.mockRestore();
     });
-
 
     describe('clicking the button', () => {       
         it('sends a GA order_submitted event', async () => {
             render(<SubmitOrderButton order={testOrder} />);
             const button = screen.getByRole('button');
 
-
             fireEvent.click(button);
-
 
             await waitFor(() => {
                 expect(gtag)
@@ -106,13 +99,11 @@ import { sendOrderToBackend } from '@/services/backend';
 import { Order } from "@/models/order";
 import { sendGaEvent } from "@/services/ga";
 
-
 export const SubmitOrderButton: React.FC<{ order: Order }> = ({ order }) => {
     const submitOrder = useCallback(async () => {
         await sendOrderToBackend(order);
         sendGaEvent('order_submitted', order);
     }, [order]);
-
 
     return (
         <button
@@ -128,27 +119,22 @@ describe('SubmitOrderButton', () => {
     let sendGaEvent: MockInstance;
     let sendOrderToBackend: MockInstance;
 
-
     beforeEach(() => {
         sendGaEvent = vi.spyOn(ga, 'sendGaEvent');
         sendOrderToBackend = vi.spyOn(backend, 'sendOrderToBackend');
     });
-
 
     afterEach(() => {
         sendGaEvent.mockRestore();
         sendOrderToBackend.mockRestore();
     });
 
-
     describe('clicking the button', () => {       
         it('sends a GA order_submitted event', async () => {
             render(<SubmitOrderButton order={testOrder} />);
             const button = screen.getByRole('button');
 
-
             fireEvent.click(button);
-
 
             await waitFor(() => {
                 expect(sendGaEvent)
