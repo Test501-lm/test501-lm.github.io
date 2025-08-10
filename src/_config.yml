@@ -3,3 +3,8 @@ source              : ./src
 destination         : ./_site
 
 theme: minima
+
+plugins: [jekyll-scholar]
+
+scholar:
+  style: harvard-cite-them-right
