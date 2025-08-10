@@ -8,3 +8,6 @@ plugins: [jekyll-scholar]
 
 scholar:
   style: harvard-cite-them-right
+  bibtex_filters:
+    - latex
+    - markdown
