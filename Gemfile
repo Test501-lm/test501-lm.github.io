@@ -1,3 +1,5 @@
+ruby file: ".ruby-version"
+
 source 'https://rubygems.org'
 
 gem "jekyll", "~> 4.4"

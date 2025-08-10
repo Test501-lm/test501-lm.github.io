@@ -166,5 +166,8 @@ DEPENDENCIES
   jekyll (~> 4.4)
   minima (~> 2.5)
 
+RUBY VERSION
+   ruby 3.3.8p144
+
 BUNDLED WITH
    2.6.9
