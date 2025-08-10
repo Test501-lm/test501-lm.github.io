@@ -1,3 +1,5 @@
 # Where things are
 source              : ./docs
 destination         : ./_site
+
+theme: minima
