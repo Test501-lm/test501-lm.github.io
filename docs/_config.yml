@@ -1,7 +1,7 @@
 # Where things are
 source              : ./docs
 destination         : ./_site
-collections_dir     : ./docs
+collections_dir     : .
 plugins_dir         : ./docs/_plugins # takes an array of strings and loads plugins in that order
 layouts_dir         : ./docs/_layouts
 data_dir            : ./docs/_data
