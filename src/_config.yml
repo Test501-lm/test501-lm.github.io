@@ -8,6 +8,7 @@ plugins: [jekyll-scholar]
 
 scholar:
   style: harvard-cite-them-right
+  sort_by: author,year
   bibtex_filters:
     - latex
     - markdown
